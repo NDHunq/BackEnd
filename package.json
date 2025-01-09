@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ts-node src/server.ts",
-    "dev": "nodemon --exec ts-node src/server.ts",
-    "build": "tsc",
-    "migration": "npx typeorm-ts-node-commonjs migration:run -d ./src/data-source.ts"
-  },
+  "start": "nodemon --exec ts-node --max-old-space-size=4096 src/server.ts",
+  "dev": "nodemon --exec ts-node --max-old-space-size=4096 src/server.ts",
+  "build": "tsc",
+  "migration": "npx typeorm-ts-node-commonjs migration:run -d ./src/data-source.ts"
+ },
   "keywords": [],
   "author": "",
   "license": "ISC",
